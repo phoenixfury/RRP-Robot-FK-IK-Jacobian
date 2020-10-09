@@ -8,13 +8,25 @@ t = linspace(0,10,200);
 q1_t = sin(t);
 q2_t = cos(2*t);
 d3_t = sin(3*t);
-
+% joints angle velocities as a function of time
+q1_dot=cos(t); 
+q2_dot=-2*sin(2*t); 
+d3_dot = 3*cos(3*t);
+figure(1)
 plot(t,q1_t)
 title('Joints')
 hold on
 plot(t,q2_t)
 plot(t,d3_t) 
 legend('q1(t)','q2(t)','d3(t)')
+hold off
+figure(2)
+plot(t,q1_dot)
+title('Joint velocities')
+hold on
+plot(t,q2_dot)
+plot(t,d3_dot) 
+legend('q1_dot(t)','q2_dot(t)','d3_dot(t)')
 hold off
 %% sec 2
 % prepare the vectors that will be plotted
